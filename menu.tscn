@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://sclmcgj8ijmr"]
+
+[ext_resource type="Texture2D" uid="uid://d2ij61ufylt2b" path="res://textures/menu_bkgnd.jpeg" id="1_lti8b"]
+[ext_resource type="Theme" uid="uid://to8uiga6aqlt" path="res://menu.tres" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://df0qgehrngix5" path="res://scripts/ui/main_menu.gd" id="3_4hy44"]
+[ext_resource type="Script" uid="uid://2iywt76hptyt" path="res://scripts/ui/exit_button.gd" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://crwgols6wn45t" path="res://scripts/ui/server_ip_edit.gd" id="4_ecwwl"]
+[ext_resource type="Script" uid="uid://bhxbvgouujcyl" path="res://scripts/ui/connect_button.gd" id="4_ytr4m"]
+[ext_resource type="Script" uid="uid://b1mk0vf1x3ruj" path="res://scripts/ui/display_name_edit.gd" id="5_kk3ma"]
+
+[node name="Control" type="Control" unique_id=1630726052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1956039332]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 746.0
+texture = ExtResource("1_lti8b")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=108934570]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ouk20")
+script = ExtResource("3_4hy44")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1381619772]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_ouk20")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1333591050]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1107408204]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=458579199]
+layout_mode = 2
+text = "Server IP"
+
+[node name="CodeEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1406182521 node_paths=PackedStringArray("menu_node")]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+script = ExtResource("4_ecwwl")
+menu_node = NodePath("../../../..")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=397071305]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=913364809]
+layout_mode = 2
+text = "Display Name"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1024604571 node_paths=PackedStringArray("menu_node")]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+script = ExtResource("5_kk3ma")
+menu_node = NodePath("../../../..")
+
+[node name="Connect Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836774878]
+custom_maximum_size = Vector2(1000, -1)
+layout_mode = 2
+theme = ExtResource("2_ouk20")
+text = " Connect"
+script = ExtResource("4_ytr4m")
+
+[node name="Exit Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1048787436]
+custom_maximum_size = Vector2(1000, -1)
+layout_mode = 2
+theme = ExtResource("2_ouk20")
+text = "Exit"
+script = ExtResource("3_mae5d")
