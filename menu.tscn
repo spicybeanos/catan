@@ -75,13 +75,16 @@ layout_mode = 2
 script = ExtResource("5_kk3ma")
 menu_node = NodePath("../../../..")
 
-[node name="Connect Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836774878]
+[node name="Connect Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836774878 node_paths=PackedStringArray("menu_node")]
 custom_maximum_size = Vector2(1000, -1)
 layout_mode = 2
 theme = ExtResource("2_ouk20")
 theme_type_variation = &"GreenButton"
 text = " Connect"
 script = ExtResource("4_ytr4m")
+menu_node = NodePath("../..")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="MarginContainer/VBoxContainer/Connect Button" unique_id=503179519]
 
 [node name="Exit Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1048787436]
 custom_maximum_size = Vector2(1000, -1)
@@ -90,3 +93,6 @@ theme = ExtResource("2_ouk20")
 theme_type_variation = &"RedButton"
 text = "Exit"
 script = ExtResource("3_mae5d")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Connect Button" to="MarginContainer/VBoxContainer/Connect Button" method="connecto_to_server"]
+[connection signal="request_completed" from="MarginContainer/VBoxContainer/Connect Button/HTTPRequest" to="MarginContainer/VBoxContainer/Connect Button" method="_on_request_completed"]

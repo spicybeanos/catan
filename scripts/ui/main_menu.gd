@@ -7,6 +7,9 @@ var config = ConfigFile.new()
 
 @export var user_config = {"display_name":"","user_id_1":"","user_id_2":"","server_ip":""}
 
+@onready var display_name_edit: LineEdit = $VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit
+@onready var server_ip_edit: LineEdit = $VBoxContainer/HBoxContainer/VBoxContainer/CodeEdit
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var err = config.load(CONFIG_PATH)
@@ -27,12 +30,15 @@ func _ready() -> void:
 		user_config['server_ip']='example.com'
 		print("Created new config file!")
 	else :
-		user_config['display_name']=config.get_value("user","display_name")
-		user_config['user_id_1']=config.get_value('user','user_id_1')
-		user_config['user_id_2']=config.get_value('user','user_id_2')
+		user_config['display_name']=config.get_value("user","display_name", "")
+		user_config['user_id_1']=config.get_value('user','user_id_1', "")
+		user_config['user_id_2']=config.get_value('user','user_id_2', "")
 		
-		user_config['server_ip']=config.get_value('connection','server_ip')
-	pass # Replace with function body.
+		user_config['server_ip']=config.get_value('connection','server_ip', "")
+
+	# Populate the menu fields with the loaded values.
+	display_name_edit.text = user_config['display_name']
+	server_ip_edit.text = user_config['server_ip']
 
 func save_config_file():
 	config.set_value("user","display_name",user_config['display_name'])

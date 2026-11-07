@@ -1,6 +1,17 @@
 extends Button
 
+@export var menu_node:MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
+
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json)
+
+
+func connecto_to_server():
+	var ip = menu_node.user_config['server_ip']
+	$HTTPRequest.request(ip+"/hi")
