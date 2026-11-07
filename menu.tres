@@ -1,4 +1,65 @@
 [gd_resource type="Theme" format=3 uid="uid://to8uiga6aqlt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arcade_button"]
+bg_color = Color(1, 0.5, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_green_button"]
+bg_color = Color(0.2, 0.7, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arcade_input"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.5, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_red_button"]
+bg_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [resource]
 default_font_size = 24
+BoxContainer/constants/separation = 20
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_arcade_button")
+Button/styles/normal = SubResource("StyleBoxFlat_arcade_button")
+Button/styles/pressed = SubResource("StyleBoxFlat_arcade_button")
+GreenButton/base_type = &"Button"
+GreenButton/styles/hover = SubResource("StyleBoxFlat_green_button")
+GreenButton/styles/normal = SubResource("StyleBoxFlat_green_button")
+GreenButton/styles/pressed = SubResource("StyleBoxFlat_green_button")
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_arcade_input")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_arcade_input")
+RedButton/base_type = &"Button"
+RedButton/styles/hover = SubResource("StyleBoxFlat_red_button")
+RedButton/styles/normal = SubResource("StyleBoxFlat_red_button")
+RedButton/styles/pressed = SubResource("StyleBoxFlat_red_button")

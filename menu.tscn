@@ -30,6 +30,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ouk20")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 script = ExtResource("3_4hy44")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1381619772]
@@ -75,6 +79,7 @@ menu_node = NodePath("../../../..")
 custom_maximum_size = Vector2(1000, -1)
 layout_mode = 2
 theme = ExtResource("2_ouk20")
+theme_type_variation = &"GreenButton"
 text = " Connect"
 script = ExtResource("4_ytr4m")
 
@@ -82,5 +87,6 @@ script = ExtResource("4_ytr4m")
 custom_maximum_size = Vector2(1000, -1)
 layout_mode = 2
 theme = ExtResource("2_ouk20")
+theme_type_variation = &"RedButton"
 text = "Exit"
 script = ExtResource("3_mae5d")
