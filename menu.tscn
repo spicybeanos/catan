@@ -84,7 +84,9 @@ text = " Connect"
 script = ExtResource("4_ytr4m")
 menu_node = NodePath("../..")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="MarginContainer/VBoxContainer/Connect Button" unique_id=503179519]
+[node name="HealthCheckHTTP" type="HTTPRequest" parent="MarginContainer/VBoxContainer/Connect Button" unique_id=503179519]
+
+[node name="LoginHTTP" type="HTTPRequest" parent="MarginContainer/VBoxContainer/Connect Button" unique_id=331846114]
 
 [node name="Exit Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1048787436]
 custom_maximum_size = Vector2(1000, -1)
@@ -95,4 +97,5 @@ text = "Exit"
 script = ExtResource("3_mae5d")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Connect Button" to="MarginContainer/VBoxContainer/Connect Button" method="connecto_to_server"]
-[connection signal="request_completed" from="MarginContainer/VBoxContainer/Connect Button/HTTPRequest" to="MarginContainer/VBoxContainer/Connect Button" method="_on_request_completed"]
+[connection signal="request_completed" from="MarginContainer/VBoxContainer/Connect Button/HealthCheckHTTP" to="MarginContainer/VBoxContainer/Connect Button" method="_on_request_completed"]
+[connection signal="request_completed" from="MarginContainer/VBoxContainer/Connect Button/LoginHTTP" to="MarginContainer/VBoxContainer/Connect Button" method="_on_login_result"]

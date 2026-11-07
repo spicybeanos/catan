@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_text_changed(txt:String)-> void:
 	print("server ip changed!")
 	if menu_node:
-		menu_node.user_config['server_ip'] = txt
+		menu_node.user_config.server_ip = txt
 		menu_node.save_config_file()
 	else:
 		print("Menu script not assigned")
