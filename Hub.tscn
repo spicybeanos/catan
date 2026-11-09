@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bwrpbdean6wvw"]
+
+[ext_resource type="Texture2D" uid="uid://dvsfmdo6yvm4m" path="res://textures/lobby background.jpeg" id="1_fvavt"]
+[ext_resource type="Theme" uid="uid://to8uiga6aqlt" path="res://menu.tres" id="2_msp50"]
+[ext_resource type="FontFile" uid="uid://bqmvhd5n4tewx" path="res://fonts/Blockblueprint-LV7z5.ttf" id="3_wx5yd"]
+
+[node name="Hub" type="Control" unique_id=262153674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=207237707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fvavt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=973783490]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 83.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1052886447]
+layout_mode = 2
+theme = ExtResource("2_msp50")
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("3_wx5yd")
+theme_override_font_sizes/font_size = 125
+text = "Hub"

@@ -40,10 +40,19 @@ func _on_request_completed(result, response_code, headers, body):
 
 func _on_login_result(result, response_code, headers, body):
 	disabled = false
+	if result != HTTPRequest.RESULT_SUCCESS or response_code != 200:
+		print("Login failed!")
+		return
+
 	var json = JSON.parse_string(body.get_string_from_utf8())
+	if typeof(json) != TYPE_DICTIONARY or not json.has("token"):
+		print("Login failed: invalid response")
+		return
+
 	menu_node.user_config.jwt = json['token']
 	menu_node.save_config_file()
 	print("Logged in!")
+	menu_node.go_to_hub()
 
 func connecto_to_server():
 	if disabled:

@@ -2,6 +2,7 @@ extends MarginContainer
 
 const CONFIG_PATH := "user://settings.config"
 const KEY_PATH := "user://generated.key"
+const HUB_SCENE := "res://Hub.tscn"
 
 var config = ConfigFile.new()
 
@@ -31,6 +32,11 @@ func _ready() -> void:
 	# Populate the menu fields with the loaded values.
 	display_name_edit.text = user_config.display_name
 	server_ip_edit.text = user_config.server_ip
+
+func go_to_hub():
+	var err = get_tree().change_scene_to_file(HUB_SCENE)
+	if err != OK:
+		push_error("Failed to change scene to lobby: %s" % error_string(err))
 
 func save_config_file():
 	config.set_value("user","display_name",user_config.display_name)
